@@ -1267,6 +1267,7 @@ void parse_argument(vid_dec_ctx_t *ps_app_ctx, CHAR *argument, CHAR *value)
             sscanf(value, "%d", &ps_app_ctx->max_level);
             break;
         case ARCH:
+	    
             if((strcmp(value, "ARM_NONEON")) == 0)
                 ps_app_ctx->e_arch = ARCH_ARM_NONEON;
             else if((strcmp(value, "ARM_A9Q")) == 0)
@@ -1279,14 +1280,18 @@ void parse_argument(vid_dec_ctx_t *ps_app_ctx, CHAR *argument, CHAR *value)
                 ps_app_ctx->e_arch = ARCH_ARM_A5;
             else if((strcmp(value, "ARM_NEONINTR")) == 0)
                 ps_app_ctx->e_arch = ARCH_ARM_NEONINTR;
-            else if((strcmp(value, "X86_GENERIC")) == 0)
+            else if((strcmp(value, "X86_GENERIC")) == 0){
                 ps_app_ctx->e_arch = ARCH_X86_GENERIC;
-            else if((strcmp(value, "X86_SSSE3")) == 0)
+		        printf("using X86_GENERIC\n");}
+            else if((strcmp(value, "X86_SSSE3")) == 0){
                 ps_app_ctx->e_arch = ARCH_X86_SSSE3;
-            else if((strcmp(value, "X86_SSE42")) == 0)
-                ps_app_ctx->e_arch = ARCH_X86_SSE42;
-            else if((strcmp(value, "X86_AVX2")) == 0)
-                ps_app_ctx->e_arch = ARCH_X86_AVX2;
+		        printf("using X86_SSSE3\n");}
+            else if((strcmp(value, "X86_SSE42")) == 0){
+		        printf("using X86_SSE42\n");
+                ps_app_ctx->e_arch = ARCH_X86_SSE42;}
+            else if((strcmp(value, "X86_AVX2")) == 0){
+		        printf("using X86_AVX2\n");
+                ps_app_ctx->e_arch = ARCH_X86_AVX2;}
             else if((strcmp(value, "MIPS_GENERIC")) == 0)
                 ps_app_ctx->e_arch = ARCH_MIPS_GENERIC;
             else if((strcmp(value, "MIPS_32")) == 0)
@@ -3071,7 +3076,7 @@ int main(WORD32 argc, CHAR *argv[])
     printf("Input filename                  : %s\n", s_app_ctx.ac_ip_fname);
     printf("Output Width                    : %-4d\n", width);
     printf("Output Height                   : %-4d\n", height);
-
+    printf("frm_cnt                         : %-4d\n", frm_cnt);
     if(frm_cnt)
     {
         double avg = u4_tot_cycles / frm_cnt;
