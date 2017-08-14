@@ -1,6 +1,11 @@
-./cmake-build-debug/
-./cmake-build-release/
-./.idea/
-./bin
-./lib
+cmake-build-debug/
+cmake-build-release/
+.idea/
+bin/
+lib/
 *.cmake
+Makefile
+decoder/CMakeFiles/
+decoder/Makefile
+test/CMakeFiles/
+test/Makefile
