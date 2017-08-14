@@ -9,3 +9,5 @@ decoder/CMakeFiles/
 decoder/Makefile
 test/CMakeFiles/
 test/Makefile
+libmpeg2.cbp
+
