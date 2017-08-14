@@ -10,4 +10,5 @@ decoder/Makefile
 test/CMakeFiles/
 test/Makefile
 libmpeg2.cbp
-
+CMakeFiles/
+CMakeCache.txt
